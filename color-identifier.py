@@ -17,14 +17,20 @@ import cv2
 
 def read_input_image(image_path):
     image = cv2.imread(image_path)
+    image = resize_input_image(image)
+    return image
 
+
+def resize_input_image(image):
     h, w, _ = image.shape
     scale_down_factor_x = 1
     scale_down_factor_y = 1
-    if w > 1500:
-        scale_down_factor_x = round(1500 / w, 2)
+    x_limit = 1500
+    y_limit = 800
+    if w > x_limit:
+        scale_down_factor_x = round(x_limit / w, 2)
     if h > 800:
-        scale_down_factor_y = round(800 / h, 2)
+        scale_down_factor_y = round(y_limit / h, 2)
 
     scale_down_factor = min(scale_down_factor_x, scale_down_factor_y)
     image = cv2.resize(image, None, fx=scale_down_factor, fy=scale_down_factor, interpolation=cv2.INTER_AREA)
