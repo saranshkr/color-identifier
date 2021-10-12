@@ -4,13 +4,12 @@
 # Dataset used: https://github.com/codebrainz/color-names/blob/master/output/colors.csv (Color Names)
 # 
 # To Dos:
-#   • Add Argument Parser for command line usage
 #   • Add docstrings and comments
 #   • Beautify manually
 #   • Explore keyboard event controls 
 # # # # # # # # # # # # # # # # # #
 
-
+import argparse
 import pandas
 import cv2
 
@@ -72,9 +71,16 @@ def find_color_name(color_names_list):
     return color_name
 
 
+def parse_image_path_from_args():
+    parser = argparse.ArgumentParser(description="Find the color name at a clicked point on the image")
+    parser.add_argument("-i", "--image", default='pexels-photo-347735.jpeg', help="image file path")
+    args = parser.parse_args()
+    return args.image
+
+
 if __name__ == '__main__':
 
-    image_path = 'pexels-photo-347735.jpeg'
+    image_path = parse_image_path_from_args()
     image = read_input_image(image_path)
 
     color_names_list = get_color_names_list()
