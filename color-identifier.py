@@ -4,10 +4,10 @@
 # Dataset used: https://github.com/codebrainz/color-names/blob/master/output/colors.csv (Color Names)
 # 
 # To Dos:
-#   • Add docstrings and comments
 #   • Beautify manually
 #   • Explore keyboard event controls 
 # # # # # # # # # # # # # # # # # #
+
 
 import argparse
 import pandas
@@ -56,6 +56,9 @@ def callback_function(event, x, y, flags, params):
 
 
 def find_color_name(color_names_list):
+    '''
+    Find color name from list with minimum absolute difference (r, g, b)
+    '''
     minimum_distance = 10000
     color_name = ''
 
