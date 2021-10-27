@@ -4,7 +4,6 @@
 # Dataset used: https://github.com/codebrainz/color-names/blob/master/output/colors.csv (Color Names)
 # 
 # To Dos:
-#   • Beautify manually
 #   • Explore keyboard event controls 
 # # # # # # # # # # # # # # # # # #
 
