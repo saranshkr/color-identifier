@@ -1,11 +1,8 @@
-# # # # # # # # # # # # # # # # # #
-# Color Identifier Project
-# Author: Saransh Kumar
-# Dataset used: https://github.com/codebrainz/color-names/blob/master/output/colors.csv (Color Names)
-# 
-# To Dos:
-#   • Explore keyboard event controls 
-# # # # # # # # # # # # # # # # # #
+"""
+Project: Color Identifier
+Author: Saransh Kumar
+Dataset used: https://github.com/codebrainz/color-names/blob/master/output/colors.csv (Color Names)
+""" 
 
 
 import argparse
@@ -55,9 +52,7 @@ def callback_function(event, x, y, flags, params):
 
 
 def find_color_name(color_names_list):
-    '''
-    Find color name from list with minimum absolute difference (r, g, b)
-    '''
+    """Find color name from list with minimum absolute difference (r, g, b)."""
     minimum_distance = 10000
     color_name = ''
 
